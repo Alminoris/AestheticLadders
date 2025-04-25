@@ -12,8 +12,6 @@ public class AestheticLaddersClient implements ClientModInitializer
     public void onInitializeClient()
     {
         for(String name : BlockSetsHelper.getWoods())
-        {
             BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WOODEN_LADDERS.get(name), RenderLayer.getCutout());
-        }
     }
 }
