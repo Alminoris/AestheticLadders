@@ -5,33 +5,32 @@ import net.alminoris.aestheticladders.item.ModItems;
 import net.alminoris.aestheticladders.util.helper.BlockSetsHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider
 {
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture)
+    public ModRecipeProvider(FabricDataOutput output)
     {
-        super(output, registriesFuture);
+        super(output);
     }
 
     @Override
-    public void generate(RecipeExporter recipeExporter)
+    public void generate(Consumer<RecipeJsonProvider> recipeExporter)
     {
         for(String name : BlockSetsHelper.WOODS)
         {
             ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WOODEN_STICKS.get(name), 4)
-                    .input('#', Registries.BLOCK.get(Identifier.ofVanilla(name+"_planks")))
+                    .input('#', Registries.BLOCK.get(Identifier.of("minecraft",name+"_planks")))
                     .pattern("# ")
                     .pattern(" #")
-                    .criterion(hasItem(Registries.BLOCK.get(Identifier.ofVanilla(name+"_planks"))),
-                            conditionsFromItem(Registries.BLOCK.get(Identifier.ofVanilla(name+"_planks"))))
+                    .criterion(hasItem(Registries.BLOCK.get(Identifier.of("minecraft",name+"_planks"))),
+                            conditionsFromItem(Registries.BLOCK.get(Identifier.of("minecraft",name+"_planks"))))
                     .offerTo(recipeExporter);
 
             ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WOODEN_LADDERS.get(name), 3)

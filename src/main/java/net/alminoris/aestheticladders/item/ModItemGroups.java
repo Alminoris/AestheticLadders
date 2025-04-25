@@ -8,8 +8,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -26,9 +24,8 @@ public class ModItemGroups
                     "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper"
             };
 
-    public static final ItemGroup ALADRS_TAB = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(AestheticLadders.MOD_ID, "aladrstab"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.aladrstab"))
+    public static final ItemGroup ALADRS_TAB = FabricItemGroup.builder(new Identifier(AestheticLadders.MOD_ID, "aladrstab"))
+            .displayName(Text.translatable("itemgroup.aladrstab"))
                     .icon(() -> new ItemStack(Blocks.LADDER)).entries((displayContext, entries) ->
                     {
                         for(String name : BlockSetsHelper.WOODS)
@@ -59,7 +56,7 @@ public class ModItemGroups
                                 entries.add(ModItems.WOODEN_STICKS.get(name));
                             }
                         }
-                    }).build());
+                    }).build();
 
     public static void registerItemGroups()
     {
