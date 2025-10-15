@@ -13,24 +13,19 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import static net.alminoris.aestheticladders.util.helper.BlockSetsHelper.EXTRA_WOODS_AN;
+import static net.alminoris.aestheticladders.util.helper.BlockSetsHelper.EXTRA_WOODS_WF;
+
 public class ModItemGroups
 {
-    public static final String[] EXTRA_WOODS_WF =
-            {
-                    "olive", "tamarisk"
-            };
-
-    public static final String[] EXTRA_WOODS_AN =
-            {
-                    "hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum", "white_mulberry", "wild_cherry",
-                    "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper"
-            };
-
     public static final ItemGroup ALADRS_TAB = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(AestheticLadders.MOD_ID, "aladrstab"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.aladrstab"))
                     .icon(() -> new ItemStack(Blocks.LADDER)).entries((displayContext, entries) ->
                     {
+                        for(String name : BlockSetsHelper.STONES)
+                            entries.add(ModBlocks.STONE_LADDERS.get(name));
+
                         for(String name : BlockSetsHelper.WOODS)
                             entries.add(ModBlocks.WOODEN_LADDERS.get(name));
 
@@ -50,6 +45,9 @@ public class ModItemGroups
                         }
                         if (FabricLoader.getInstance().isModLoaded("wildfields"))
                         {
+                            for(String name : BlockSetsHelper.EXTRA_STONES_WF)
+                                entries.add(ModBlocks.STONE_LADDERS.get(name));
+
                             for(String name : EXTRA_WOODS_WF)
                             {
                                 entries.add(ModBlocks.WOODEN_LADDERS.get(name));
