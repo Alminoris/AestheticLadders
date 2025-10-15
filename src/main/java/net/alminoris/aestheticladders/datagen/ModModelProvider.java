@@ -35,7 +35,7 @@ public class ModModelProvider extends FabricModelProvider
             ModJsonHelper.createBlockModel(ModJsonTemplates.STONE_LADDER_BLOCK_MODEL, name+"_stone_ladder", "minecraft:block/"+name);
             ModJsonHelper.createBlockModel(ModJsonTemplates.STONE_MOSSED_LADDER_BLOCK_MODEL, name+"_stone_ladder_mossed", "minecraft:block/"+name);
             ModJsonHelper.createBlockstate(ModJsonTemplates.STONE_LADDER_BLOCKSTATE_TEMPLATE, name+"_stone_ladder");
-            blockStateModelGenerator.registerParentedItemModel(ModBlocks.STONE_LADDERS.get(name), Identifier.of(AestheticLadders.MOD_ID, name+"_stone_ladder"));
+            blockStateModelGenerator.registerParentedItemModel(ModBlocks.STONE_LADDERS.get(name), Identifier.of(AestheticLadders.MOD_ID, "block/"+name+"_stone_ladder"));
         }
 
         for(String name : BlockSetsHelper.EXTRA_STONES_WF)
@@ -43,7 +43,7 @@ public class ModModelProvider extends FabricModelProvider
             ModJsonHelper.createBlockModel(ModJsonTemplates.STONE_LADDER_BLOCK_MODEL, name+"_stone_ladder", "aestheticladders:block/"+name);
             ModJsonHelper.createBlockModel(ModJsonTemplates.STONE_MOSSED_LADDER_BLOCK_MODEL, name+"_stone_ladder_mossed", "aestheticladders:block/"+name);
             ModJsonHelper.createBlockstate(ModJsonTemplates.STONE_LADDER_BLOCKSTATE_TEMPLATE, name+"_stone_ladder");
-            blockStateModelGenerator.registerParentedItemModel(ModBlocks.STONE_LADDERS.get(name), Identifier.of(AestheticLadders.MOD_ID, name+"_stone_ladder"));
+            blockStateModelGenerator.registerParentedItemModel(ModBlocks.STONE_LADDERS.get(name), Identifier.of(AestheticLadders.MOD_ID, "block/"+name+"_stone_ladder"));
         }
     }
 

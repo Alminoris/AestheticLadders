@@ -1,5 +1,6 @@
 package net.alminoris.aestheticladders.block.custom;
 
+import net.alminoris.aestheticladders.util.helper.VoxelShapeHelper;
 import net.minecraft.block.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,14 +15,22 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StoneLadderBlock extends Block implements Waterloggable
 {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
     public static final BooleanProperty MOSSED = BooleanProperty.of("mossed");
+
+    private static final VoxelShape SHAPE = StoneLadderBlock.createCuboidShape(0, 0, 5, 16, 16, 11);
 
     public StoneLadderBlock()
     {
@@ -71,6 +80,22 @@ public class StoneLadderBlock extends Block implements Waterloggable
     }
 
     @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+    {
+        return getRotatedShape(state);
+    }
+
+    private VoxelShape getRotatedShape(BlockState state)
+    {
+        Direction direction = state.get(FACING);
+
+        List<Box> boxes = new ArrayList<>();
+        boxes.add(SHAPE.getBoundingBox());
+
+        return VoxelShapeHelper.rotateShape(boxes, direction);
+    }
+
+    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx)
     {
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
@@ -80,5 +105,11 @@ public class StoneLadderBlock extends Block implements Waterloggable
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder)
     {
         builder.add(FACING, MOSSED);
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state)
+    {
+        return BlockRenderType.MODEL;
     }
 }
