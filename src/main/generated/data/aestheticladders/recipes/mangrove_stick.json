@@ -1,16 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:mangrove_planks"
-    }
-  },
   "pattern": [
     "# ",
     " #"
   ],
+  "key": {
+    "#": []
+  },
   "result": {
-    "count": 4,
-    "item": "aestheticladders:mangrove_stick"
+    "item": "aestheticladders:mangrove_stick",
+    "count": 4
   }
 }

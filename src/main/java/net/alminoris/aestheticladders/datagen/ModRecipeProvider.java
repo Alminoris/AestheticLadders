@@ -28,11 +28,11 @@ public class ModRecipeProvider extends FabricRecipeProvider
         for(String name : BlockSetsHelper.WOODS)
         {
             ShapedRecipeJsonBuilder.create(ModItems.WOODEN_STICKS.get(name), 4)
-                    .input('#', Registry.BLOCK.get(Identifier.of("minecraft",name+"_planks")))
+                    .input('#', Registry.BLOCK.get(new Identifier("minecraft",name+"_planks")))
                     .pattern("# ")
                     .pattern(" #")
-                    .criterion(hasItem(Registry.BLOCK.get(Identifier.of("minecraft",name+"_planks"))),
-                            conditionsFromItem(Registry.BLOCK.get(Identifier.of("minecraft",name+"_planks"))))
+                    .criterion(hasItem(Registry.BLOCK.get(new Identifier("minecraft",name+"_planks"))),
+                            conditionsFromItem(Registry.BLOCK.get(new Identifier("minecraft",name+"_planks"))))
                     .offerTo(recipeExporter);
 
             ShapedRecipeJsonBuilder.create(ModBlocks.WOODEN_LADDERS.get(name), 3)
@@ -68,7 +68,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
         for(String name : BlockSetsHelper.STONES)
         {
-            Block block = Registry.BLOCK.get(Identifier.of("minecraft", name.equals("basalt_side") ? "basalt" :
+            Block block = Registry.BLOCK.get(new Identifier("minecraft", name.equals("basalt_side") ? "basalt" :
                     (name.equals("quartz_block_bottom") ? "quartz_block" : name)));
 
             offerStonecuttingRecipe(recipeExporter, ModBlocks.STONE_LADDERS.get(name), block, 1);

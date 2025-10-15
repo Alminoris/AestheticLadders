@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "aestheticladders:spruce_ladder"
+      "minecraft:mud_bricks_stone_ladder_from_air_stonecutting"
     ]
   },
   "criteria": {
-    "has_spruce_stick": {
+    "has_air": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "aestheticladders:spruce_stick"
+              "minecraft:air"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "aestheticladders:spruce_ladder"
+        "recipe": "minecraft:mud_bricks_stone_ladder_from_air_stonecutting"
       }
     }
   },
   "requirements": [
     [
-      "has_spruce_stick",
+      "has_air",
       "has_the_recipe"
     ]
   ]

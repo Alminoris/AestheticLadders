@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "aestheticladders:mangrove_stick"
-    }
-  },
   "pattern": [
     "# #",
     "###",
     "# #"
   ],
+  "key": {
+    "#": {
+      "item": "aestheticladders:mangrove_stick"
+    }
+  },
   "result": {
-    "count": 3,
-    "item": "aestheticladders:mangrove_ladder"
+    "item": "aestheticladders:mangrove_ladder",
+    "count": 3
   }
 }

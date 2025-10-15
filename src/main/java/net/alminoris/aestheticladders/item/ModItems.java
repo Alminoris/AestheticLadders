@@ -21,7 +21,7 @@ public class ModItems
 
     private static Item registerItem(String name, Item item)
     {
-        return Registry.register(Registry.ITEM, Identifier.of(AestheticLadders.MOD_ID, name), item);
+        return Registry.register(Registry.ITEM, new Identifier(AestheticLadders.MOD_ID, name), item);
     }
 
     public static void registerItems()
