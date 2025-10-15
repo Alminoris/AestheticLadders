@@ -17,8 +17,8 @@ public class AestheticLadders implements ModInitializer
 	@Override
 	public void onInitialize()
 	{
+		ModItemGroups.registerModItemGroups();
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
-		ModItemGroups.registerModItemGroups();
 	}
 }

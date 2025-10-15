@@ -58,7 +58,7 @@
   "item.aestheticladders.juniper_stick": "Wacholderstock",
   "item.aestheticladders.olive_stick": "Olivenstock",
   "item.aestheticladders.tamarisk_stick": "Tamariskenstock",
-  "itemgroup.aladrstab": "Aesthetic Ladders",
+  "itemGroup.aestheticladders.aladrstab": "Aesthetic Ladders",
   "block.aestheticladders.western_serviceberry_ladder": "Felsenbirnenleiter",
   "block.aestheticladders.bald_cypress_ladder": "Sumpfzypressenleiter",
   "block.aestheticladders.thuja_ladder": "Thujaleiter",
