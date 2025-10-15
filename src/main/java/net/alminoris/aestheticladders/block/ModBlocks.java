@@ -1,6 +1,7 @@
 package net.alminoris.aestheticladders.block;
 
 import net.alminoris.aestheticladders.AestheticLadders;
+import net.alminoris.aestheticladders.block.custom.StoneLadderBlock;
 import net.alminoris.aestheticladders.util.helper.BlockSetsHelper;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -19,6 +20,14 @@ public class ModBlocks
         for(String name : BlockSetsHelper.getWoods())
         {
             put(name, registerBlock(name+"_ladder", new LadderBlock(AbstractBlock.Settings.copy(Blocks.LADDER))));
+        }
+    }};
+
+    public static final Dictionary<String, Block> STONE_LADDERS = new Hashtable<>()
+    {{
+        for(String name : BlockSetsHelper.getStones())
+        {
+            put(name, registerBlock(name+"_stone_ladder", new StoneLadderBlock()));
         }
     }};
 
