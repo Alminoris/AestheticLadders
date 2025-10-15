@@ -19,6 +19,6 @@ public class AestheticLadders implements ModInitializer
 	{
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
-		ModItemGroups.registerItemGroups();
+		ModItemGroups.registerModItemGroups();
 	}
 }

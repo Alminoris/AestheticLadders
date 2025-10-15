@@ -1,66 +1,46 @@
 package net.alminoris.aestheticladders.item;
 
 import net.alminoris.aestheticladders.AestheticLadders;
-import net.alminoris.aestheticladders.block.ModBlocks;
-import net.alminoris.aestheticladders.util.helper.BlockSetsHelper;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import static net.alminoris.aestheticladders.util.helper.BlockSetsHelper.EXTRA_WOODS_AN;
-import static net.alminoris.aestheticladders.util.helper.BlockSetsHelper.EXTRA_WOODS_WF;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModItemGroups
 {
-    public static final ItemGroup ALADRS_TAB =
+    public static List<String> WF_WOOD_NAMES = List.of("olive", "tamarisk", "western_serviceberry", "trembling_aspen", "cottonwood");
 
-            FabricItemGroup.builder(new Identifier(AestheticLadders.MOD_ID, "aladrstab")).displayName(Text.translatable("itemgroup.aladrstab"))
-                    .icon(() -> new ItemStack(Blocks.LADDER)).entries((displayContext, entries) ->
-                    {
-                        for(String name : BlockSetsHelper.STONES)
-                            entries.add(ModBlocks.STONE_LADDERS.get(name));
+    public static List<String> AN_WOOD_NAMES = List.of("hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum",
+            "white_mulberry", "wild_cherry", "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper",
+            "bald_cypress", "thuja", "sequoia", "mountain_hemlock", "cryptomeria", "yew", "larch");
 
-                        for(String name : BlockSetsHelper.WOODS)
-                            entries.add(ModBlocks.WOODEN_LADDERS.get(name));
+    public static List<String> EXTRA_STONES_WF = List.of("dolomite_block", "saltmarsh_block", "loessic_marl_block", "loamy_marl_block", "fossil_marlstone_block", "limestone_block");
 
-                        for(String name : BlockSetsHelper.WOODS)
-                            entries.add(ModItems.WOODEN_STICKS.get(name));
+    public static ItemGroup ALADRS_TAB = FabricItemGroupBuilder.build(new Identifier(AestheticLadders.MOD_ID, "aladrstab"),
+            () -> new ItemStack(Blocks.LADDER));
 
-                        if (FabricLoader.getInstance().isModLoaded("arborealnature"))
-                        {
-                            for(String name : EXTRA_WOODS_AN)
-                            {
-                                entries.add(ModBlocks.WOODEN_LADDERS.get(name));
-                            }
-                            for(String name : EXTRA_WOODS_AN)
-                            {
-                                entries.add(ModItems.WOODEN_STICKS.get(name));
-                            }
-                        }
-                        if (FabricLoader.getInstance().isModLoaded("wildfields"))
-                        {
-                            for(String name : BlockSetsHelper.EXTRA_STONES_WF)
-                                entries.add(ModBlocks.STONE_LADDERS.get(name));
-
-                            for(String name : EXTRA_WOODS_WF)
-                            {
-                                entries.add(ModBlocks.WOODEN_LADDERS.get(name));
-                            }
-                            for(String name : EXTRA_WOODS_WF)
-                            {
-                                entries.add(ModItems.WOODEN_STICKS.get(name));
-                            }
-                        }
-                    }).build();
-
-    public static void registerItemGroups()
+    public static void registerModItemGroups()
     {
+        WF_WOOD_NAMES = new ArrayList<>();
 
+        AN_WOOD_NAMES = new ArrayList<>();
+
+        EXTRA_STONES_WF = new ArrayList<>();
+
+        if (FabricLoader.getInstance().isModLoaded("arborealnature"))
+        {
+            AN_WOOD_NAMES = List.of("hazelnut", "hornbeam", "hawthorn", "quince", "plum", "mango", "fig", "viburnum",
+                    "white_mulberry", "wild_cherry", "bauhinia", "pine", "fir", "cedar", "araucaria", "juniper");
+        }
+        if (FabricLoader.getInstance().isModLoaded("wildfields"))
+        {
+            WF_WOOD_NAMES = List.of("olive", "tamarisk", "western_serviceberry");
+            EXTRA_STONES_WF = List.of("dolomite_block", "saltmarsh_block", "loessic_marl_block", "loamy_marl_block", "fossil_marlstone_block");
+        }
     }
 }
