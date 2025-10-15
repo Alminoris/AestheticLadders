@@ -23,6 +23,9 @@ public class ModItemGroups
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.aladrstab"))
                     .icon(() -> new ItemStack(Blocks.LADDER)).entries((displayContext, entries) ->
                     {
+                        for(String name : BlockSetsHelper.STONES)
+                            entries.add(ModBlocks.STONE_LADDERS.get(name));
+
                         for(String name : BlockSetsHelper.WOODS)
                             entries.add(ModBlocks.WOODEN_LADDERS.get(name));
 
@@ -42,6 +45,9 @@ public class ModItemGroups
                         }
                         if (FabricLoader.getInstance().isModLoaded("wildfields"))
                         {
+                            for(String name : BlockSetsHelper.EXTRA_STONES_WF)
+                                entries.add(ModBlocks.STONE_LADDERS.get(name));
+
                             for(String name : EXTRA_WOODS_WF)
                             {
                                 entries.add(ModBlocks.WOODEN_LADDERS.get(name));
