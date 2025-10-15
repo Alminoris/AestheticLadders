@@ -15,7 +15,7 @@ public class ModItems
     {{
         for(String name : BlockSetsHelper.getWoods())
         {
-            put(name, registerItem(name+"_stick", new Item(new Item.Settings())));
+            put(name, registerItem(name+"_stick", new Item(new Item.Settings().group(ModItemGroups.ALADRS_TAB))));
         }
     }};
 
