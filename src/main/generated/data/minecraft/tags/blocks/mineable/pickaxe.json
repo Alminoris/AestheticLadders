@@ -1,14 +1,6 @@
 {
   "replace": false,
   "values": [
-    "aestheticladders:oak_ladder",
-    "aestheticladders:birch_ladder",
-    "aestheticladders:spruce_ladder",
-    "aestheticladders:jungle_ladder",
-    "aestheticladders:acacia_ladder",
-    "aestheticladders:dark_oak_ladder",
-    "aestheticladders:crimson_ladder",
-    "aestheticladders:warped_ladder",
     "aestheticladders:stone_stone_ladder",
     "aestheticladders:tuff_stone_ladder",
     "aestheticladders:blackstone_stone_ladder",
