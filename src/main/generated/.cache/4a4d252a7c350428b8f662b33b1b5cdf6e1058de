@@ -1,4 +1,4 @@
-// 1.19.4	2025-10-15T20:26:56.4342716	Aesthetic Ladders/Recipes
+// 1.19.4	2025-10-16T14:20:28.566755	Aesthetic Ladders/Recipes
 e8aaeef8736375579c180b7e01c1d9846f29bce0 data\aestheticladders\advancements\recipes\decorations\mangrove_stick.json
 9c55dbe53035d16df7b117a4b08e07dcd3b39cce data\aestheticladders\recipes\tamarisk_ladder.json
 cc4299442ef8f4d83ebf40fae482303cce15249c data\aestheticladders\advancements\recipes\building_blocks\mud_bricks_stone_ladder_from_mud_bricks_stonecutting.json
@@ -11,8 +11,8 @@ a430fc322ac48d06033710db0a9d67e5b9d50c8e data\aestheticladders\recipes\thuja_lad
 9de1a35e83bc011cd648d56ad1c516ad91d9b019 data\aestheticladders\recipes\stone_stone_ladder_from_stone_stonecutting.json
 42e2b40462954d1eb54a1c6bdb51f7557a9bbb21 data\aestheticladders\recipes\quince_ladder.json
 84ea5576b9fc1b3df68fd38e2084dce6969b1a26 data\aestheticladders\recipes\juniper_ladder.json
-9b7d61c5c9f4e6e3568de47c2af800a59532de1e data\aestheticladders\recipes\yew_ladder.json
 89184af19b59ae644644ba7f6c732349fdaca9fe data\aestheticladders\advancements\recipes\decorations\sequoia_ladder.json
+9b7d61c5c9f4e6e3568de47c2af800a59532de1e data\aestheticladders\recipes\yew_ladder.json
 4906080b20bb729576b57d2ce1c501f45f73c873 data\aestheticladders\recipes\birch_stick.json
 35d3eb4594424676f96a95d9b2472d2ebeb757d5 data\aestheticladders\advancements\recipes\decorations\warped_stick.json
 b23391fbad49432d5688b26a1bb0b6485e637e56 data\aestheticladders\advancements\recipes\decorations\cryptomeria_ladder.json

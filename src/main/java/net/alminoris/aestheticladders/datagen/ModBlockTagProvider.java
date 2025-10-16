@@ -23,11 +23,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         {
             getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                     .add(ModBlocks.WOODEN_LADDERS.get(name));
+            getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                    .add(ModBlocks.WOODEN_LADDERS.get(name));
         }
 
         for (String name : BlockSetsHelper.getStones())
         {
             getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                    .add(ModBlocks.STONE_LADDERS.get(name));
+            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                     .add(ModBlocks.STONE_LADDERS.get(name));
         }
     }
