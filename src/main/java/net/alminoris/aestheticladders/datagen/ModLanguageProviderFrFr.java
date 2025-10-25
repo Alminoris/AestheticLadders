@@ -149,6 +149,6 @@ public class ModLanguageProviderFrFr extends FabricLanguageProvider
             }
         }
 
-        translationBuilder.add("itemgroup.aladrstab", "Aesthetic Ladders");
+        translationBuilder.add("itemGroup.aestheticladders.aladrstab", "Aesthetic Ladders");
     }
 }

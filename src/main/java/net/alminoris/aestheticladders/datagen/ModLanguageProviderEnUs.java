@@ -66,6 +66,6 @@ public class ModLanguageProviderEnUs extends FabricLanguageProvider
                     translationBuilder.add("item." + AestheticLadders.MOD_ID + "." + path, displayName);
                 });
 
-        translationBuilder.add("itemgroup.aladrstab", "Aesthetic Ladders");
+        translationBuilder.add("itemGroup.aestheticladders.aladrstab", "Aesthetic Ladders");
     }
 }
