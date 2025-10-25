@@ -26,35 +26,47 @@ public class ModLanguageProviderEnUs extends FabricLanguageProvider
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder)
     {
-        for (Block block : Registries.BLOCK)
-        {
-            Optional<RegistryKey<Block>> id = Registries.BLOCK.getKey(block);
-            String path = id.get().getValue().getPath();
+        Registries.BLOCK.stream()
+                .filter(block ->
+                {
+                    Identifier id = Registries.BLOCK.getId(block);
+                    return AestheticLadders.MOD_ID.equals(id.getNamespace());
+                })
+                .forEach(block ->
+                {
+                    Identifier id = Registries.BLOCK.getId(block);
+                    String path = id.getPath();
 
-            String[] parts = path.split("_");
+                    String[] parts = path.split("_");
 
-            String displayName = Arrays.stream(parts)
-                    .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
-                    .collect(Collectors.joining(" "));
+                    String displayName = Arrays.stream(parts)
+                            .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
+                            .collect(Collectors.joining(" "));
 
-            displayName = displayName.replace(" Nss", "");
+                    displayName = displayName.replace(" Nss", "");
 
-            translationBuilder.add("block." + AestheticLadders.MOD_ID + "." + path, displayName);
-        }
+                    translationBuilder.add("block." + AestheticLadders.MOD_ID + "." + path, displayName);
+                });
 
-        for (Item item : Registries.ITEM)
-        {
-            Optional<RegistryKey<Item>> id = Registries.ITEM.getKey(item);
-            String path = id.get().getValue().getPath();
+        Registries.ITEM.stream()
+                .filter(item ->
+                {
+                    Identifier id = Registries.ITEM.getId(item);
+                    return AestheticLadders.MOD_ID.equals(id.getNamespace());
+                })
+                .forEach(item ->
+                {
+                    Identifier id = Registries.ITEM.getId(item);
+                    String path = id.getPath();
 
-            String[] parts = path.split("_");
+                    String[] parts = path.split("_");
 
-            String displayName = Arrays.stream(parts)
-                    .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
-                    .collect(Collectors.joining(" "));
+                    String displayName = Arrays.stream(parts)
+                            .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
+                            .collect(Collectors.joining(" "));
 
-            translationBuilder.add("item." + AestheticLadders.MOD_ID + "." + path, displayName);
-        }
+                    translationBuilder.add("item." + AestheticLadders.MOD_ID + "." + path, displayName);
+                });
 
         translationBuilder.add("itemgroup.aladrstab", "Aesthetic Ladders");
     }
