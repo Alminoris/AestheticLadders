@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-16T13:58:31.1561239	Aesthetic Ladders/Model Definitions
+// 1.20.1	2025-10-25T18:03:05.2281356	Aesthetic Ladders/Model Definitions
 7b50d4e21fbea47878b83581536854224f382354 assets\aestheticladders\models\item\yew_stick.json
 991c890ccbb2ae6cc4a82da662c55a30ec5eb4d1 assets\aestheticladders\models\item\white_mulberry_ladder.json
 76e41959ad24f5f267beabf3ca04d4738f141bac assets\aestheticladders\models\item\bald_cypress_stick.json
@@ -71,8 +71,8 @@ c991a53f016345cc5db680d91fd21010f56ec6bf assets\aestheticladders\blockstates\man
 1b018d5fceb910c5a337289924fb0bca452e42bf assets\aestheticladders\blockstates\cottonwood_ladder.json
 f46726c915eb383eb2bdb2043e0fbca727d7d7b7 assets\aestheticladders\models\item\loamy_marl_block_stone_ladder.json
 a1f9ff0228e3023bf56f98c84c0f4e90382371f6 assets\aestheticladders\models\item\pine_stick.json
-fe9f504a0c4384a2577cf26ce2ef177e644f23ed assets\aestheticladders\models\item\larch_stick.json
 59a7b08de2186e464eb1c76ab13b67393d2ee55b assets\aestheticladders\blockstates\mango_ladder.json
+fe9f504a0c4384a2577cf26ce2ef177e644f23ed assets\aestheticladders\models\item\larch_stick.json
 0ca31570b6f9f8392cf0dcff5514f780d09d819a assets\aestheticladders\models\item\mango_stick.json
 bb48e6bab9f98fff4f13df9c3c4b51d2d1b96461 assets\aestheticladders\blockstates\bamboo_ladder.json
 76358d07b852f8e1f5ed82406ddf7bffdb03bdb9 assets\aestheticladders\models\item\mango_ladder.json
